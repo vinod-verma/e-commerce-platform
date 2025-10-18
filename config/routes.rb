@@ -33,4 +33,8 @@ Rails.application.routes.draw do
   resources :product_questions
   resources :product_answers
   resources :likes, only: [:create, :update]
+  
+  # Weather forecast routes
+  resources :forecasts, only: [:new, :create, :show]
+  get '/forecast', to: 'forecasts#new'
 end
